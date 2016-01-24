@@ -1,0 +1,2 @@
+export GOPATH=$HOME/extra/go-self/
+export PATH=$HOME/extra/go-self/bin:$PATH
