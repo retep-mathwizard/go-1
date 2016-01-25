@@ -1,8 +1,11 @@
-package main
+package lib
+
 import (
 	"fmt"
 )
-func main() {
-	var X int = 10
+
+func ImportLine() string {
+	var Statement = "I was imported"
+	fmt.Println(Statement)
+	return Statement
 }
-main()

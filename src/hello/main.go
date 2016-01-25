@@ -5,6 +5,7 @@ import (
 	//c  is basically importing it as c then go get
 	c "github.com/skilstak/go/colors"
 	i "github.com/skilstak/go/input"
+	m "hello/lib"
 	"os"
 	s "strings"
 )
@@ -73,4 +74,6 @@ func main() {
 		fmt.Println("Add a space and then your name to have more fun!")
 		printNormal("Hello " + name)
 	}
+	m.ImportLine()
+	fmt.Println(Statement)
 }
