@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	//c  is basically importing it as c then go get
 	m "hello/lib"
 	"os"
@@ -18,7 +17,6 @@ func main() {
 			m.PrintForever("Hello " + name)
 		} else if s.HasPrefix(option, "-r") {
 			m.PrintRandom("Hello " + name)
-			fmt.Println("No")
 		} else if s.HasPrefix(option, "-m") {
 			m.PrintMulti("Hello " + name)
 		} else if s.HasPrefix(option, "-s") {
