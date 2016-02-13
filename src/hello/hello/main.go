@@ -2,7 +2,7 @@ package main
 
 import (
 	//c  is basically importing it as c then go get
-	m "hello/hellofunc"
+	m "hello"
 	"os"
 	s "strings"
 )
