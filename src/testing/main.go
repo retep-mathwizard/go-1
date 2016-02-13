@@ -2,25 +2,60 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
-func printType(x interface{}) bool {
-	stringX := false
-	switch v := x.(type) {
-	case int:
-		fmt.Println("int data", v)
-	case string:
-		stringX = true
-		fmt.Println("string data", v)
-	default:
-		fmt.Println("I don't like your type", v)
+//for loop
+//   if strings.contains(element 1)
+//   else
+//
+//
+func arrayContains(stuffToCheckFor []string, stuff string) bool {
+	mode := false
+	for _, substr := range stuffToCheckFor {
+		if strings.Contains(stuff, substr) {
+			mode = true
+		}
 	}
-	return stringX
+	if mode == true {
+		return true
+	} else {
+		return false
+	}
+}
+func arrayEquals(stuffToCheckFor []string, stuff string) bool {
+	mode := false
+	for _, str := range stuffToCheckFor {
+		if stuff == str {
+			mode = true
+		}
+	}
+	if mode == true {
+		return true
+	} else {
+		return false
+	}
 }
 func main() {
-	var x string = "hello"
-	printType(x)
-	if isString == true {
-		fmt.Println("It's a string!")
+	//slice
+	slicenames := []string{"bob", "jim", "manny", "sally", "bo"}
+	//array has a size defined
+	arraynames := [3]string{
+		"leto",
+		"paul",
+		"teg",
 	}
+	fmt.Println(arraynames)
+	for _, element := range slicenames {
+		//_ is the index, slicenames
+		//_ indaicates not used
+		//element is the item in the index
+		//range is the length of an slice/array
+		fmt.Println(element)
+	}
+	hername := "sammy"
+	inside := arrayContains(slicenames, hername)
+	fmt.Println(inside)
+	equals := arrayEquals([]string{"joe", "bo"}, "bo")
+	fmt.Println(equals)
 }
