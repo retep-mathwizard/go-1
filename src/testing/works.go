@@ -10,7 +10,7 @@ import (
 //   else
 //
 //
-func arrayContains(stuffToCheckFor []string, stuff string) bool {
+func Contains(stuffToCheckFor []string, stuff string) bool {
 	mode := false
 	for _, substr := range stuffToCheckFor {
 		if strings.Contains(stuff, substr) {
@@ -23,7 +23,7 @@ func arrayContains(stuffToCheckFor []string, stuff string) bool {
 		return false
 	}
 }
-func arrayEquals(stuffToCheckFor []string, stuff string) bool {
+func Equals(stuffToCheckFor []string, stuff string) bool {
 	mode := false
 	for _, str := range stuffToCheckFor {
 		if stuff == str {
