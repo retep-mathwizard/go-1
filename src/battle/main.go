@@ -20,7 +20,7 @@ func getname() (string, string) {
 	fmt.Println(c.CL)
 	return p1name, p2name
 }
-func getclass(p1name string, p2name string) (main.class, main.class) {
+func getclass(p1name string, p2name string) (class, class) {
 	wizard := class{health: 200, agility: 50, damage: 80, accuracy: 70}
 	ogre := class{health: 450, agility: 25, damage: 100, accuracy: 40}
 	archer := class{health: 300, agility: 100, damage: 40, accuracy: 100}
@@ -37,7 +37,7 @@ func getclass(p1name string, p2name string) (main.class, main.class) {
 		p1class = ogre
 	case "wizard":
 		p1class = wizard
-	case "solider":
+	case "soldier":
 		p1class = soldier
 	default:
 		fmt.Println("invalid case.")
@@ -52,23 +52,20 @@ func getclass(p1name string, p2name string) (main.class, main.class) {
 		p2class = ogre
 	case "wizard":
 		p2class = wizard
-	case "solider":
+	case "soldier":
 		p2class = soldier
 	default:
 		fmt.Println("invalid case.")
 		os.Exit(-1)
 	}
 	fmt.Println(c.CL)
-	fmt.Println(reflect.TypeOf(wizard))
-	fmt.Println(p2class)
-	fmt.Println(p1class)
+	return p1class, p2class
 }
 
 func main() {
 	p1name, p2name := getname()
-	getclass(p1name, p2name)
-	//fmt.Println(p1class)
-	//fmt.Println(p2class)
-	fmt.Println(p1name)
-	fmt.Println(p2name)
+	//name
+	p1class, p2class := getclass(p1name, p2name)
+	//class selection
+
 }
