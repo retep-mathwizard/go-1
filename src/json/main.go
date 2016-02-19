@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	//file reading package
-	"encoding/json"
+	//"encoding/json"
+	//"io"
+	"os"
 	//.json decoding package
 )
 
@@ -21,5 +23,9 @@ func main() {
 		panic(err)
 	}
 	fmt.Println(file)
-	//not decoded
+	//file2 := io.Reader(file)
+	//fmt.Println(file2)
+	//error
+	file4, _ := os.Open("file.json")
+	fmt.Println(file4)
 }
