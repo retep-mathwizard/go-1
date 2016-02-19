@@ -1,38 +1,31 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	//file reading package
-	//"encoding/json"
-	//"io"
-	"os"
-	//.json decoding package
 )
 
-type MyStruct struct {
-	X    int    `json:"X"`
-	Y    int    `json:"Y"`
-	Name string `json:"Name"`
-	//tells it that it's a json type, and should look for "X" in the json file
+type car struct {
+	Name   string   `json:"name"`
+	Wheels int      `json"wheels"`
+	Awards []string `json:"awards"`
 }
 
 func main() {
-	file, err := ioutil.ReadFile("file.json")
+	// read the file, using the ioutil pacakge  https://golang.org/pkg/io/ioutil/#ReadFile
+	bytes, err := ioutil.ReadFile("file.json")
 	if err != nil {
+		fmt.Println(err)
 		panic(err)
+		// failed to read file, do something with err
 	}
-	fmt.Println(file)
-	//file2 := io.Reader(file)
-	//fmt.Println(file2)
-	//error
-	file4, _ := os.Open("file.json")
-	fmt.Println(file4)
+	honda := &car{}
+	err = json.Unmarshal(bytes, honda)
+	if err != nil {
+		// error unmarshalling the json, do something
+	}
+	fmt.Println(honda.Name)
+	fmt.Println(honda.Wheels)
+	fmt.Println(honda.Awards)
 }
-
-//returned
-//file: [123 10 32 32 88 58 53 44 10 32 32 89 58 49 48 44 10 32 32 78 97 109 101 58 34 98 111 98 34 10 125 10]
-//file4: &{0xc820010390}
-//
-//
-//

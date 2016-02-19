@@ -1,5 +1,5 @@
 {
-  X:5,
-  Y:10,
-  Name:"bob"
+  "name":"car",
+  "wheels":10,
+  "awards":["a","b","c"]
 }
