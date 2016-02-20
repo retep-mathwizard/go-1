@@ -8,7 +8,7 @@ import (
 
 type car struct {
 	Name   string   `json:"name"`
-	Wheels int      `json"wheels"`
+	Wheels int      `json:"wheels"`
 	Awards []string `json:"awards"`
 }
 
