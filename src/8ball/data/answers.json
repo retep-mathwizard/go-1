@@ -1,0 +1,11 @@
+{
+  "answers":[
+    {
+      "keys": ["a","b","c"],
+      "response": "heyyy... the alphabet!"
+    },
+    {
+      "keys":["1","2","3"],
+      "response":"hey look! numbers"
+    }]
+}
