@@ -24,9 +24,9 @@ func LoadClass(path string) *Race {
 	if err != nil {
 		panic(err)
 	}
-	jsonClass := &Race{}
+	var jsonClass Race
 	//err = json.NewDecoder(bytes.Body).Decode(jsonClass)
-	err = json.Unmarshal(bytes, jsonClass)
+	err = json.Unmarshal(bytes, &Race{})
 	//decodes it
 	if err != nil {
 		panic(err)
