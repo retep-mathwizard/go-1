@@ -1,0 +1,18 @@
+{
+  "Name":    "Super Boss",
+  "About": "Really hard to beat!",
+  "Health":  1000,
+  "Attacks": [
+    {
+      "Name":     "Vaporize",
+      "Info": "Blank",
+      "Damage":   100,
+      "Accuracy": 100
+    },
+    {
+      "Name":     "Random Supa-Laser",
+      "Info":"Blank",
+      "Damage":   1000,
+      "Accuracy": 10
+    }]
+}
