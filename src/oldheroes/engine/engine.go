@@ -2,11 +2,11 @@ package engine
 
 import (
 	"fmt"
-	m "github.com/retep-mathwizard/fun/go/src/heroes/bmath"
 	i "github.com/retep-mathwizard/utils/input"
 	o "github.com/retep-mathwizard/utils/other"
+	m "oldheroes/bmath"
 	//c "github.com/skilstak/go/colors"
-	"github.com/retep-mathwizard/fun/go/src/heroes/load"
+	"oldheroes/load"
 	"strings"
 )
 
@@ -54,12 +54,12 @@ func Attack(attacker *load.Race, attackername string, defender *load.Race, defen
 func InputMove() string {
 	move := strings.ToLower(i.StringInput("Name > "))
 }
-func IsValid(class *load.Race, move string) bool {  
+func IsValid(class *load.Race, move string) bool {
 	for j, _ := range class.Attacks {
 		stringName := strings.ToLower(string(class.Attacks[j].Name))
 		if move == stringName {
 			return true
-		} 
+		}
 		return false
 	}
 }
@@ -77,7 +77,7 @@ func ChooseMove(name string, class *load.Race) (int, bool) {
 	movePos := -1
 	validMove := false
 	hasShield := false
-	for validMove = false {
+	for validMove == false {
 		move := InputMove()
 		if IsValid(class, move) != true {
 			if move == "sheild" || move == "shield" {
@@ -87,8 +87,9 @@ func ChooseMove(name string, class *load.Race) (int, bool) {
 			} else {
 				fmt.Println("Invalid move.")
 			}
-		} else
+		} else {
 
+		}
 	}
 	return movePos, hasShield
 }

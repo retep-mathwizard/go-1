@@ -19,7 +19,7 @@ type Move struct {
 	Accuracy int    `json:"Accuracy"`
 }
 
-func LoadClass(path string) *Race {
+func LoadClass(path string) Race {
 	bytes, err := ioutil.ReadFile(path)
 	if err != nil {
 		panic(err)
