@@ -2,15 +2,16 @@ package main
 
 import (
 	"bufio"
-	"os"
-	"strings"
 	"fmt"
 	"io"
+	"os"
+	"strings"
 )
+
 func Dasherize(line string) string {
-		return strings.Replace(strings.ToLower(strings.TrimSpace((line))), " ", "-", -1)
+	return strings.Replace(strings.ToLower(strings.TrimSpace((line))), " ", "-", -1)
 }
-func DasherizeFile(file string, newfile string) {
+func DasherizeFile(file string) []string {
 	f, _ := os.Open(file)
 	// Create a new Scanner for the file.
 	var lines []string
@@ -20,21 +21,22 @@ func DasherizeFile(file string, newfile string) {
 		line := scanner.Text()
 		dashline := Dasherize(line)
 		lines = append(lines, dashline)
-		
+
 	}
-	fmt.Println(lines)
-	createdfile, err := os.Create(newfile)
+	return lines
+
+}
+func WriteLines(file string, data []string) {
+	createdfile, err := os.Create(file)
 	if err != nil {
 		panic(err)
 	}
-	for _, data := range lines {
-		_, err := io.WriteString(createdfile,data + "\n")
+	for _, line := range data {
+		_, err := io.WriteString(createdfile, line+"\n")
 		if err != nil {
 			panic(err)
 		}
 	}
-
-
 }
 func main() {
 	DasherizeFile("file", "newfile")

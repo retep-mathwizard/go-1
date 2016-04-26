@@ -1,0 +1,7 @@
+Dasherize will take
+   in each line, strip whitespace from edges
+ and LOweRcasE-EVERyTHING! This Data is returned as
+ A slice of strings ([]string) and you can write this to a file
+ WIth WriteLines! WOW!
+
+ it also reads empty lines and keeps them :)
