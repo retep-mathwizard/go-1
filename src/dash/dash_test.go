@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func Dash_test() {
+func TestDash() {
 	test1 := dash.Dasherize(" This is a sentence. ")
 	test2 := dash.Dasherize("dash will strip whitespace AND lowercase WoRds")
 	test3 := dash.Dasherize("It will then replace all spaces with dashes")
