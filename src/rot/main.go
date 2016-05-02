@@ -8,6 +8,9 @@ import (
 func rot(number int, str string) string {
 	caps := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	lower := "abcdefghijklmnopqrstuvwxyz"
+	if number < 0 {
+		number = 26 - number
+	}
 	for pos, char := range str {
 		strchar := string(char)
 		if strings.Contains(caps, strchar) {
@@ -22,5 +25,5 @@ func rot(number int, str string) string {
 }
 
 func main() {
-	fmt.Println(rot(13, "ATTACK AT DAWN"))
+	fmt.Println(rot(-13, "ATTACK AT DAWN"))
 }
