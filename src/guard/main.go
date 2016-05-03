@@ -2,88 +2,92 @@ package main
 
 import (
 	"fmt"
+	"github.com/bradfitz/iter"
+	"github.com/retep-mathwizard/utils/mmath"
+	"github.com/skilstak/go-input"
+	"strconv"
 	"strings"
 )
 
 const one = `
- ██╗
-███║
-╚██║
- ██║
- ██║
- ╚═╝
+ ██╗ 
+███║ 
+╚██║ 
+ ██║ 
+ ██║ 
+ ╚═╝ 
 `
 const two = `
-██████╗ 
-╚════██╗
- █████╔╝
-██╔═══╝ 
-███████╗
-╚══════╝
+██████╗  
+╚════██╗ 
+ █████╔╝ 
+██╔═══╝  
+███████╗ 
+╚══════╝ 
 `
 const three = `
-██████╗ 
-╚════██╗
- █████╔╝
- ╚═══██╗
-██████╔╝
-╚═════╝ 
+██████╗  
+╚════██╗ 
+ █████╔╝ 
+ ╚═══██╗ 
+██████╔╝ 
+╚═════╝  
 `
 const four = `
-██╗  ██╗
-██║  ██║
-███████║
-╚════██║
-     ██║
-     ╚═╝
+██╗  ██╗ 
+██║  ██║ 
+███████║ 
+╚════██║ 
+     ██║ 
+     ╚═╝ 
 `
 const five = `
-███████╗
-██╔════╝
-███████╗
-╚════██║
-███████║
-╚══════╝
-`
-const six = `
- ██████╗ 
+███████╗ 
 ██╔════╝ 
 ███████╗ 
-██╔═══██╗
-╚██████╔╝
- ╚═════╝ 
+╚════██║ 
+███████║ 
+╚══════╝ 
+`
+const six = `
+ ██████╗  
+██╔════╝  
+███████╗  
+██╔═══██╗ 
+╚██████╔╝ 
+ ╚═════╝  
 `
 const seven = `
-███████╗
-╚════██║
-    ██╔╝
-   ██╔╝ 
-   ██║  
-   ╚═╝ 
+███████╗ 
+╚════██║ 
+    ██╔╝ 
+   ██╔╝  
+   ██║   
+   ╚═╝   
 `
 const eight = `
- █████╗ 
-██╔══██╗
-╚█████╔╝
-██╔══██╗
-╚█████╔╝
- ╚════╝ 
+ █████╗  
+██╔══██╗ 
+╚█████╔╝ 
+██╔══██╗ 
+╚█████╔╝ 
+ ╚════╝  
 `
 const nine = `
- █████╗ 
-██╔══██╗
-╚██████║
- ╚═══██║
- █████╔╝
- ╚════╝ 
+ █████╗  
+██╔══██╗ 
+╚██████║ 
+ ╚═══██║ 
+ █████╔╝ 
+ ╚════╝  
 `
 const zero = `
- ██████╗ 
-██╔═████╗
-██║██╔██║
-████╔╝██║
-╚██████╔╝
- ╚═════╝ 
+ ██████╗  
+██╔═████╗ 
+██║██╔██║ 
+████╔╝██║ 
+╚██████╔╝ 
+ ╚═════╝  
 `
 
 var intToStr = map[string]string{
@@ -130,8 +134,17 @@ func joinStrings(stuff [][]string) []string {
 	return joined
 }
 func main() {
-	stuff := joinStrings(getAscii("2423"))
+	var str string
+	for range iter.N(7) {
+		str += strconv.Itoa(mmath.RandInt(0, 10))
+	}
+	stuff := joinStrings(getAscii(str))
 	for _, line := range stuff {
 		fmt.Println(line)
+	}
+	if input.Ask("Type the number you see > ") == str {
+		fmt.Println("correct!")
+	} else {
+		fmt.Println("aww")
 	}
 }
