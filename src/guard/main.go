@@ -135,7 +135,7 @@ func joinStrings(stuff [][]string) []string {
 }
 func main() {
 	var str string
-	for range iter.N(7) {
+	for range iter.N(11) {
 		str += strconv.Itoa(mmath.RandInt(0, 10))
 	}
 	stuff := joinStrings(getAscii(str))
