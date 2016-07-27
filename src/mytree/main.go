@@ -28,7 +28,7 @@ func printFile(ignoreDirs []string) filepath.WalkFunc {
 
 func main() {
 	ignoreDirs := []string{".bzr", ".hg", ".git"}
-	err := filepath.Walk("/home/retep", printFile(ignoreDirs))
+	err := filepath.Walk(os.Args[1], printFile(ignoreDirs))
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -1,4 +1,4 @@
-package main
+package guard
 
 import (
 	"fmt"
@@ -133,9 +133,9 @@ func joinStrings(stuff [][]string) []string {
 	}
 	return joined
 }
-func main() {
+func Check(user string) bool {
 	var str string
-	for range iter.N(7) {
+	for range iter.N(6) {
 		str += strconv.Itoa(mmath.RandInt(0, 10))
 	}
 	stuff := joinStrings(getAscii(str))
@@ -143,8 +143,8 @@ func main() {
 		fmt.Println(line)
 	}
 	if input.Ask("Type the number you see > ") == str {
-		fmt.Println("correct!")
+		return true
 	} else {
-		fmt.Println("aww")
+		return false
 	}
 }
