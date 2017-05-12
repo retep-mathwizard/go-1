@@ -9,7 +9,7 @@ import (
 
 	"github.com/unixpickle/kahoot-hack/kahoot"
 )
-
+/*https://github.com/unixpickle/kahoot-hack/blob/master/kahoot-play/main.go*/
 func main() {
 	if len(os.Args) != 3 {
 		fmt.Fprintln(os.Stderr, "Usage: play <game pin> <nickname>")
