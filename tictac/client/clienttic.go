@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/reteps/comm/comm"
 	"github.com/skilstak/go-input"
+	"os"
 	"strconv"
 	"strings"
 	"time"
@@ -64,7 +65,7 @@ func checkwin(board [][]int, code int) bool {
 	return false
 }
 func main() {
-	connection := comm.Connect("192.168.1.18", "1234")
+	connection := comm.Connect(os.Args[1], "1234")
 	who := connection.Read()
 	xturn := who == "x"
 	xwon := false
